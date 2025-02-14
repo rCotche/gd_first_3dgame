@@ -21,4 +21,49 @@ inspector > csgshape3d > use colision enbled
 csgcylinder3d
 inspector > csgshape3d > operation > subtraction | create a window
 
+IMPORTANT to substract a csg il faut que la forme à soit un enfant de la forme principale	
+
 inspector > csgcylinder3d > sides > increase it to make it more circular
+
+==============
+
+Terrain3D extension pour l'extérieur
+
+==============
+
+toolbar en haut (3 points ou option button)
+
+add sun to scene
+
+add environnement
+
+==============
+JOLT
+
+4.4 or later
+
+project > peojet settings > general > physics > 3d > physic engine > jolt > save & restart
+
+4.3
+
+asset lib > go online > search godot jolt > download > install > save & restart > project > peojet settings > general > physics > 3d > physic engine > jolt > save & restart
+
+==============
+
+mesh = 3d object
+uv = 2d representation of 3d
+texturing = paint
+material = simulate surface properties (metalic, doux)
+rig = animate
+animations data = comme des animations qui move les bones du character
+
+==============
+
+gltf / glb
+
+glb = binary version = smaller & recommanded form most cases
+
+==============
+
+kaylousberg
+kenney
