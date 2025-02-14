@@ -12,3 +12,13 @@ meshinstance3d > boxmesh
 ==============
 
 use snap (toolbar en haut) > transform > configure snap > 0.1; 10 degrees; 10% scale
+
+==============
+
+csgbox3d
+inspector > csgshape3d > use colision enbled
+
+csgcylinder3d
+inspector > csgshape3d > operation > subtraction | create a window
+
+inspector > csgcylinder3d > sides > increase it to make it more circular
