@@ -123,3 +123,8 @@ bring the character file in a scene > editable children > animation player
 when the animation est separee
 drag & drop the file dans godot > click in the animation file > menu importer (onglet au dessus de la hiearchie de la scene) > click sur la liste déroulante (scene par default) > change to animation library
 drag model to the scene > animationplayer (child du model draged) > animation tab (en bas au niveau du terminal) > click on animation > manage animation > load library > select the animation file
+
+==============
+
+il faut blender
+speed up worflow ?
