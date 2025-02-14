@@ -128,3 +128,19 @@ drag model to the scene > animationplayer (child du model draged) > animation ta
 
 il faut blender
 speed up worflow ?
+
+==============
+
+utiliser pour level interieur
+wolrldenvironement node > inspector > enviornement > click environnement > background > mode > custom color
+
+wolrldenvironement node > inspector > enviornement > click environnement > background > mode > sky
+
+wolrldenvironement node > inspector > enviornement > click environnement > sky > click sky > sky material > click procedural > sky
+
+==============
+
+wolrldenvironement node > inspector > enviornement > click environnement > sky > click sky > sky material > select panormasky (petite fleche, liste deroulanete) > panorma > drag the file (hdr/hdri)
+adjust intensity
+wolrldenvironement node > inspector > enviornement > click environnement > background > Energy multiplier
+poly haven site
