@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://svos2hed2olr"
-path="res://.godot/imported/chest_gold.glb-65ba79acb627730f119db37f575db980.scn"
+uid="uid://cdyh65vhmmb6a"
+path="res://.godot/imported/barrel.glb-64e18dad3b13052c2ea12b18b9c0bf95.scn"
 
 [deps]
 
-source_file="res://models/chest_gold/chest_gold.glb"
-dest_files=["res://.godot/imported/chest_gold.glb-65ba79acb627730f119db37f575db980.scn"]
+source_file="res://models/barrel/barrel.glb"
+dest_files=["res://.godot/imported/barrel.glb-64e18dad3b13052c2ea12b18b9c0bf95.scn"]
 
 [params]
 
@@ -33,9 +33,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"DungeonMat": {
+"texture": {
 "use_external/enabled": true,
-"use_external/path": "res://models/chest_gold/mat_chest.tres"
+"use_external/path": "res://models/barrel/texture.tres"
 }
 }
 }

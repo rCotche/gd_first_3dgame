@@ -67,3 +67,27 @@ glb = binary version = smaller & recommanded form most cases
 
 kaylousberg
 kenney
+
+==============
+
+drag a glb file
+
+menu importer (onglet au dessus de la hiearchie de la scene)
+root scale
+reimport
+
+==============
+
+right click > resources > standardmaterial3d
+
+menu importer (onglet au dessus de la hiearchie de la scene) > advance > onglet material > click enabled > path > chemin vers notre standardmaterial3d > reimporter
+
+double click on standardmaterial3d dans l'explorateur de fichier godot > albedo > texture > drag texture png
+
+double click on standardmaterial3d dans l'explorateur de fichier godot > shading > diffuse mode toon > specular mode toon
+
+==============
+
+menu importer (onglet au dessus de la hiearchie de la scene) > gltf > embeded image > extract texture
+
+menu importer (onglet au dessus de la hiearchie de la scene) > advance > actions > extract materials > select folder > extract

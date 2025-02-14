@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6250h37ihokk"]
+[gd_scene load_steps=7 format=3 uid="uid://b6250h37ihokk"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_wq2ux"]
 [ext_resource type="PackedScene" uid="uid://svos2hed2olr" path="res://models/chest_gold/chest_gold.glb" id="2_q6iov"]
+[ext_resource type="PackedScene" uid="uid://cdyh65vhmmb6a" path="res://models/barrel/barrel.glb" id="3_g5iw1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l66mq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -92,4 +93,7 @@ radius = 0.251237
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.2, 0.5, 3.6)
 
 [node name="chest_gold2" parent="." instance=ExtResource("2_q6iov")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.8, 0.2, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 0.2, 1.8)
+
+[node name="barrel" parent="." instance=ExtResource("3_g5iw1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.1, 2)
