@@ -91,3 +91,27 @@ double click on standardmaterial3d dans l'explorateur de fichier godot > shading
 menu importer (onglet au dessus de la hiearchie de la scene) > gltf > embeded image > extract texture
 
 menu importer (onglet au dessus de la hiearchie de la scene) > advance > actions > extract materials > select folder > extract
+
+==============
+
+nest example
+drag to the hiearchy > click gltf file > click droit > editable children
+
+make local
+drag to the hiearchy > click gltf file > click droit > make local
+
+==============
+
+use simple shape pour les collision = improve performance
+
+ou alors
+
+mettre plusieurs simple collision shape / pour le 2e,3e... > click droit sur simple shape > make unique
+click model > click droit > editable children > select mesh > toolbar en haut mesh > create collision shape > sibling > simple convex
+
+==============
+
+lock greybox
+disabled colision
+assign a material : inspector > geometryinstance > geometry > material override > new standardmaterial > click on the material > transparency menu > transparency property > alpha
+albedo > color > magenta > set transparency

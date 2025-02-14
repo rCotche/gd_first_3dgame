@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfn4rk4o6wmoh"]
+
+[ext_resource type="PackedScene" uid="uid://bmtj12ae2yevn" path="res://models/building/wall_doorway.glb" id="1_ox6gn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmtn4"]
+size = Vector3(3.9, 4, 1)
+
+[node name="WallDoorwayGame" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_kmtn4")
+
+[node name="wall_doorway2" parent="." instance=ExtResource("1_ox6gn")]
