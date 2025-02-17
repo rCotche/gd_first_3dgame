@@ -174,4 +174,22 @@ wolrldenvironement node > inspector > ssao enabled
 
 ==============
 
-wolrldenvironement node > inspector >
+#recherche
+wolrldenvironement node > inspector > tonemap
+
+control color & brightness
+wolrldenvironement node > inspector > adjustement enabled > color correction > new gradienttexture1d > reclick > gradient
+
+==============
+
+camera3d > inspector > projection
+
+camera3d > inspector > fov
+
+pour les fps
+wolrldenvironement node > inspector > camera attribute > new cameraattributepratical > reclick > auto exposure enabled
+
+==============
+
+projet > projet settings > rendering > anti aliasing > Msaa3d > 4x slow
+projet > projet settings > rendering > environnement > advance settings > light & shadows

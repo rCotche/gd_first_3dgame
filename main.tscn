@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6250h37ihokk"]
+[gd_scene load_steps=16 format=3 uid="uid://b6250h37ihokk"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_wq2ux"]
 [ext_resource type="Texture2D" uid="uid://cebouvkfrs8k" path="res://rogland_clear_night_1k.hdr" id="1_ykcvy"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://2idt1mlu2lt8" path="res://scenes/wall_corner_game.tscn" id="5_pss5t"]
 [ext_resource type="PackedScene" uid="uid://cs7i7apkj2npc" path="res://scenes/ceiling_game.tscn" id="7_jfbnw"]
 [ext_resource type="PackedScene" uid="uid://dchy8rhp5xorp" path="res://scenes/props/torch_mounted_game.tscn" id="8_kvcff"]
+
+[sub_resource type="Gradient" id="Gradient_1hrsw"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bfiuj"]
+gradient = SubResource("Gradient_1hrsw")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fbcpd"]
 panorama = ExtResource("1_ykcvy")
@@ -21,6 +26,12 @@ background_energy_multiplier = 2.0
 sky = SubResource("Sky_oqi13")
 ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
+ssao_enabled = true
+adjustment_enabled = true
+adjustment_color_correction = SubResource("GradientTexture1D_bfiuj")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ushit"]
+auto_exposure_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50wuu"]
 transparency = 1
@@ -30,6 +41,7 @@ albedo_color = Color(1, 0.207843, 1, 0.309804)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_238vn")
+camera_attributes = SubResource("CameraAttributesPractical_ushit")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.509042, 0.816737, -0.271692, -0.149466, 0.226979, 0.962362, 0.847665, 0.530491, 0.00653316, 0, 5.8, 0)
