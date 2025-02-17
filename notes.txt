@@ -140,7 +140,38 @@ wolrldenvironement node > inspector > enviornement > click environnement > sky >
 
 ==============
 
-wolrldenvironement node > inspector > enviornement > click environnement > sky > click sky > sky material > select panormasky (petite fleche, liste deroulanete) > panorma > drag the file (hdr/hdri)
+wolrldenvironement node > inspector > enviornement > click environnement > sky > click sky > sky material > select panormasky (petite fleche, liste deroulanete) > panorma > drag the file (hdr/hdri ou exr)
 adjust intensity
 wolrldenvironement node > inspector > enviornement > click environnement > background > Energy multiplier
 poly haven site
+
+==============
+
+directional light = sun ou moon
+omni light = spot ball light
+spotlight = lampe
+
+dabord on place les spotlights ensuite les spotlight et omnilight en fonction de la deco de la scene
+
+==============
+
+directionallight > inspector > light3d > light > color
+
+moins de lumiere venant du sky
+wolrldenvironement node > inspector > ambient light > sky contribution
+
+==============
+
+omnilight > inspector > omnilight3d > omni > range
+omnilight > inspector > light3d > light > color
+omnilight > inspector > light3d > light > Energy
+omnilight > inspector > light3d > shadow enabled
+
+==============
+
+ssao = screen space ambient occlusion
+wolrldenvironement node > inspector > ssao enabled
+
+==============
+
+wolrldenvironement node > inspector >

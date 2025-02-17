@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6250h37ihokk"]
+[gd_scene load_steps=13 format=3 uid="uid://b6250h37ihokk"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_wq2ux"]
 [ext_resource type="Texture2D" uid="uid://cebouvkfrs8k" path="res://rogland_clear_night_1k.hdr" id="1_ykcvy"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c7wp15oj2mqtt" path="res://scenes/barrel.tscn" id="3_lripi"]
 [ext_resource type="PackedScene" uid="uid://bvmis6kwg2ya0" path="res://scenes/wall_game.tscn" id="4_4gpv5"]
 [ext_resource type="PackedScene" uid="uid://2idt1mlu2lt8" path="res://scenes/wall_corner_game.tscn" id="5_pss5t"]
+[ext_resource type="PackedScene" uid="uid://cs7i7apkj2npc" path="res://scenes/ceiling_game.tscn" id="7_jfbnw"]
+[ext_resource type="PackedScene" uid="uid://dchy8rhp5xorp" path="res://scenes/props/torch_mounted_game.tscn" id="8_kvcff"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fbcpd"]
 panorama = ExtResource("1_ykcvy")
@@ -17,6 +19,7 @@ sky_material = SubResource("PanoramaSkyMaterial_fbcpd")
 background_mode = 2
 background_energy_multiplier = 2.0
 sky = SubResource("Sky_oqi13")
+ambient_light_sky_contribution = 0.5
 tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50wuu"]
@@ -30,6 +33,7 @@ environment = SubResource("Environment_238vn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.509042, 0.816737, -0.271692, -0.149466, 0.226979, 0.962362, 0.847665, 0.530491, 0.00653316, 0, 5.8, 0)
+light_color = Color(1, 0.976471, 0.490196, 1)
 shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="."]
@@ -115,26 +119,96 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.15, 1.3)
 [node name="Barrel" parent="." instance=ExtResource("3_lripi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.6, 1.5)
 
-[node name="WallGame" parent="." instance=ExtResource("4_4gpv5")]
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="WallGame" parent="Walls" instance=ExtResource("4_4gpv5")]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -1.5, 0.15, 5.4)
 
-[node name="WallGame2" parent="." instance=ExtResource("4_4gpv5")]
+[node name="WallGame2" parent="Walls" instance=ExtResource("4_4gpv5")]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -1.5, 0.15, 6.4)
 
-[node name="WallCornerGame" parent="." instance=ExtResource("5_pss5t")]
+[node name="WallCornerGame" parent="Walls" instance=ExtResource("5_pss5t")]
 transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -1.5, 0.15, 7.4)
 
-[node name="WallGame3" parent="." instance=ExtResource("4_4gpv5")]
+[node name="WallGame3" parent="Walls" instance=ExtResource("4_4gpv5")]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 2.1, 0.15, 5.4)
 
-[node name="WallGame4" parent="." instance=ExtResource("4_4gpv5")]
+[node name="WallGame4" parent="Walls" instance=ExtResource("4_4gpv5")]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 2.1, 0.15, 6.4)
 
-[node name="WallGame5" parent="." instance=ExtResource("4_4gpv5")]
+[node name="WallGame5" parent="Walls" instance=ExtResource("4_4gpv5")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.1, 0.15, 7.4)
 
-[node name="WallGame6" parent="." instance=ExtResource("4_4gpv5")]
+[node name="WallGame6" parent="Walls" instance=ExtResource("4_4gpv5")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.5, 0.15, 7.4)
 
-[node name="WallCornerGame2" parent="." instance=ExtResource("5_pss5t")]
+[node name="WallCornerGame2" parent="Walls" instance=ExtResource("5_pss5t")]
 transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 2.1, 0.15, 7.4)
+
+[node name="Ceilings" type="Node3D" parent="."]
+
+[node name="CeilingGame" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 1.9, 4.4)
+
+[node name="CeilingGame2" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2, 1.9, 4.4)
+
+[node name="CeilingGame3" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1, 1.9, 4.4)
+
+[node name="CeilingGame4" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.9, 4.4)
+
+[node name="CeilingGame5" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.9, 1.9, 4.4)
+
+[node name="CeilingGame6" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.9, 1.9, 4.4)
+
+[node name="CeilingGame7" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.9, 1.9, 4.4)
+
+[node name="CeilingGame8" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 1.9, 3.4)
+
+[node name="CeilingGame9" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2, 1.9, 3.4)
+
+[node name="CeilingGame10" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1, 1.9, 3.4)
+
+[node name="CeilingGame11" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.9, 3.4)
+
+[node name="CeilingGame12" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.9, 1.9, 3.4)
+
+[node name="CeilingGame13" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.9, 1.9, 3.4)
+
+[node name="CeilingGame14" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.9, 1.9, 3.4)
+
+[node name="CeilingGame15" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 1.9, 2.4)
+
+[node name="CeilingGame16" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2, 1.9, 2.4)
+
+[node name="CeilingGame17" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1, 1.9, 2.4)
+
+[node name="CeilingGame18" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.9, 2.4)
+
+[node name="CeilingGame19" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.9, 1.9, 2.4)
+
+[node name="CeilingGame20" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.9, 1.9, 2.4)
+
+[node name="CeilingGame21" parent="Ceilings" instance=ExtResource("7_jfbnw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.9, 1.9, 2.4)
+
+[node name="TorchMountedGame" parent="." instance=ExtResource("8_kvcff")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.8, 0.7, 3)
